@@ -1,6 +1,6 @@
 message = input('Введите сообщение: ')
 recipient = input('Введите адрес получателя: ')
-def send_email(message, recipient, sender="university.help@gmail.com"):
+def send_email(message, recipient, *,sender="university.help@gmail.com"):
     # print(message,recipient,sender)
     z =['.com','.ru','.net']
     for i in z:
