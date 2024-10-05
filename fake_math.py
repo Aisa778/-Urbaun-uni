@@ -1,0 +1,13 @@
+
+
+
+def divide(first, second):
+    if second==0:
+        print('Ошибка!')
+    else:
+        print(first/second)
+
+first=int(input('введите первое число:'))
+second=int(input('введите второе число:'))
+
+divide(first,second)
