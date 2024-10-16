@@ -21,23 +21,52 @@ class House:
     def __eq__(self, other):
         if isinstance(other, int):
             return self.number_of_floors==other.number_of_floors
+        elif isinstance(other, House):
+            return self.number_of_floors == other.number_of_floors
         else:
             print ('нельзя сравнить')
+
 
 
     def __lt__(self, other):
-        return self.number_of_floors < other.number_of_floors
+        if isinstance(other, int):
+            return self.number_of_floors < other.number_of_floors
+        elif isinstance(other, House):
+            return self.number_of_floors < other.number_of_floors
+        else:
+            print('нельзя сравнить')
+
+
 
     def __le__(self, other):
-        return self.number_of_floors <= other.number_of_floors
+        if isinstance(other, int):
+            return self.number_of_floors <= other.number_of_floors
+        elif isinstance(other, House):
+            return self.number_of_floors <= other.number_of_floors
+        else:
+            print('нельзя сравнить')
+
+
+
     def __gt__(self, other):
-        return self.number_of_floors > other.number_of_floors
+        if isinstance(other, int):
+            return self.number_of_floors > other.number_of_floors
+        elif isinstance(other, House):
+            return self.number_of_floors > other.number_of_floors
+        else:
+            print('нельзя сравнить')
+
+
 
     def __ge__(self, other):
-        if isinstance(other, House):
+        if isinstance(other, int):
+            return self.number_of_floors >= other.number_of_floors
+        elif isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
         else:
-            print ('нельзя сравнить')
+            print('нельзя сравнить')
+
+
 
     def __ne__( self, other):
         return self.number_of_floors != other.number_of_floors
