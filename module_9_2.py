@@ -5,9 +5,7 @@ first_result = [len(x) for x in first_strings if len(x) >=5]
 print (first_result)
 
 second_result = [(x, y) for x in first_strings for y in second_strings if len(x) ==len(y)]
+print(second_result)
 
-third_strings = first_strings + second_strings
-print (third_strings)
-
-third_result = {x: len(x) for x in third_strings if len(x) % 2 == 0 }
+third_result = {x: len(x) for x in first_strings+second_strings if len(x) % 2 == 0 }
 print(third_result)
