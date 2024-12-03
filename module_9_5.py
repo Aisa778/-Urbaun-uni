@@ -7,7 +7,7 @@ class Iterator:
         self.start = start
         self.stop = stop
         self.step = step
-     
+
 
         if self.step == 0:
             raise StepValueError('шаг не может быть равен 0')
@@ -33,7 +33,10 @@ class Iterator:
 try:
     iter1 = Iterator(100, 200, 0)
     for i in iter1:
+
         print(i, end = ' ')
+        # print()
+
 except StepValueError:
     print('Шаг указан неверно')
 
@@ -44,14 +47,14 @@ iter5 = Iterator(10, 1)
 
 
 for i in iter2:
-    print(i, end = ' ')
-    print()
+    print(i, end=' ')
+    # print()
 for i in iter3:
-    print(i, end = ' ')
-    print()
+    print(i, end=' ')
+    # print()
 for i in iter4:
-    print(i, end = ' ')
-    print()
+    print(i, end=' ')
+    # print()
 for i in iter5:
-    print(i, end = ' ')
-    print()
+    print(i, end=' ')
+    # print()
