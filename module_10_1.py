@@ -10,7 +10,7 @@ def write_words(word_count, file_name):
         for i in range(1,word_count+1):
 
             time.sleep(0.1)
-            file.write(f"Какое-то слово № ряд {i}\n")
+            file.write(f"Какое-то слово № {i}\n")
 
 
 
@@ -22,25 +22,33 @@ s = write_words(20, 'example2.txt')
 s = write_words(200, 'example3.txt')
 s = write_words(100, 'example4.txt')
 finish = time.time()
-print(f'работа потоков {start - finish}')
+print(f'работа потоков {finish-start}')
 
 
 start_1 =  time.time()
-thread_1= threading.Thread(write_words(10,'example5.txt'))
+thread_1= threading.Thread(target=write_words, args=(10, 'example5.txt'))
+
+
+thread_2= threading.Thread(target=write_words, args = (20,'example6.txt'))
+# thread_2.start()
+# thread_2.join()
+#
+thread_3= threading.Thread(target=write_words, args=(200,'example7.txt'))
+# thread_3.start()
+# thread_3.join()
+#
+thread_4= threading.Thread(target = write_words, args= (100,'example8.txt'))
+
+
 thread_1.start()
-thread_1.join()
-
-thread_2= threading.Thread(write_words(20,'example6.txt'))
 thread_2.start()
-thread_2.join()
-
-thread_3= threading.Thread(write_words(200,'example7.txt'))
 thread_3.start()
-thread_3.join()
-
-thread_4= threading.Thread(write_words(100,'example8.txt'))
 thread_4.start()
+
+thread_1.join()
+thread_2.join()
+thread_3.join()
 thread_4.join()
 
 finish_1 = time.time()
-print(f'работа потоков {start_1 - finish_1}')
+print(f'работа потоков {finish_1-start_1}')
