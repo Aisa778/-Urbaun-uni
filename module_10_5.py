@@ -1,6 +1,8 @@
+from datetime import datetime
 from itertools import count
 from queue import Queue
 import time
+import datetime
 # import multiprocessing
 from multiprocessing.pool import Pool
 
@@ -19,23 +21,26 @@ def read_info(name):
 filenames = [f'./file {number}.txt' for number in range(1, 5)]
 
 # count=[]
-# for name in filenames:
-#     start_time = time.time()
-#     f = read_info(name)
-#     end_time = time.time()
-#     elapsed_time = end_time-start_time
-#     count.append(elapsed_time)
-# print(count)
+start_time = datetime.datetime.now()
+for name in filenames:
+    # start_time = datetime.datetime.now()
+    f = read_info(name)
+    
+end_time = datetime.datetime.now()
+elapsed_time = end_time-start_time
+    # count.append(elapsed_time)
+print(elapsed_time)
 
-if __name__ == '__main__':
-    count = []
-    with Pool(1) as pool:
-        start_time = time.time()
-        result = pool.map(read_info, filenames)
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-        count.append(elapsed_time)
-    print(count)
+# if __name__ == '__main__':
+#     start_time2 = datetime.datetime.now()
+#     with Pool(4) as pool:
+#         pool.map(read_info, filenames)
+#
+#     end2 = datetime.datetime.now()
+#     time_of_multiprocessing = end2 - start_time2
+#
+#     print(time_of_multiprocessing)
+
 
 
 
