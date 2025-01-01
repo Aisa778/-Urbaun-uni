@@ -1,5 +1,6 @@
 # import pandas as pd
 # import numpy as np
+import matplotlib.pyplot as plt
 
 
 # Pandas
@@ -33,4 +34,14 @@
 # # print(*diff)
 # np.set_printoptions(precision=2, suppress=True)
 # print (diff)
+
+# визуализация на matplotlob
+
+x_1 = list(range(0,16))
+y_1 = [9.70,4.0,11.30,4.0,3.5,29.60,26.50,6.80,8.5,8.0,18.75,6.8,21.50,1.29,5.76,4.12]
+x_2 = list(range(0,16))
+y_2 = [10.25,4.21,11.30,3.99,3.50,29.54,26.0,8.67,4.23,3.95,15.10,4.78,2.57,1.30,6.5,4.17]
+plt.plot(x_1,y_1,x_2,y_2)
+# plt.plot(x_2,y_2)
+plt.show()
 
