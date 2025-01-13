@@ -17,6 +17,7 @@ class TournamentTest(unittest.TestCase):
     def test_run(self):
         r_1 = module_12_runner.Tournament(90, self.run_1, self.run_2, self.run_3)
         self.all_results = module_12_runner.Tournament.start(r_1)
+        print(self.all_results)
         print(self.assertTrue(max(self.all_results), 'Ник'))
         # return self.all_results
     #
